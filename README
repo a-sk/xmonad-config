@@ -1,0 +1,6 @@
+XMonad modular configuration with some hacks 
+to handle fullscreen apps correctly
+
+TODO:
+1. refactor Key.hs
+2. write Panel.hs (like mntnoe's one)
