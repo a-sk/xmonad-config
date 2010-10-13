@@ -21,7 +21,7 @@ import XMonad.Layout.Simplest ( Simplest(Simplest) )
 
 
 layouts =  onWorkspace "web"  ( tabs' ||| stack' ||| full )
-         $ onWorkspace "im"   ( magnifier ( im_tabs ||| im_stack ) )
+         $ onWorkspace "im"   ( magnifierOff ( im_tabs ||| im_stack ) )
          $ onWorkspace "work" ( tabs' ||| stack')
          $ stack' ||| tabs'
         where
@@ -35,7 +35,7 @@ layouts =  onWorkspace "web"  ( tabs' ||| stack' ||| full )
             stack'        = named "stack" $ gap $ stack
             im_stack      = named "im_stack" $ gap $ withIM (1%7) buddy_list (stack)
             im_tabs       = named "im_tabs" $ gap $ withIM (1%7)  buddy_list (tabs)
-            buddy_list    = (is_skype `Or` Resource "main")
+            buddy_list    = (is_skype `Or` Resource "main"  `Or` Role "contactlist")
             is_skype      = (Title "Skype™ 2.1 (Beta) для Linux") `Or` (Title "a.skurihin - Skype™ (Beta)")
 
 

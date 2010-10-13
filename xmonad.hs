@@ -24,7 +24,7 @@ myFocusedBorderColor = "black"
 myModMask            = mod4Mask
 myNormalBorderColor  = "black"
 myNumlockMask        = mod2Mask
-myTerminal           = "urxvtc"
+myTerminal           = "urxvtc -e tmux"
 myWorkspaces         = ["web", "im", "work", "view"]
 
 -- | Whether focus follows the mouse pointer.

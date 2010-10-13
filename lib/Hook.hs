@@ -21,6 +21,7 @@ manageHooks = composeHook <+> manageDocks <+> manageDialogs <+> manageMenus
 composeHook = composeOne $
     [ propertyToQuery onWeb  -?> moveTo "web"
     , propertyToQuery onIM   -?> moveTo "im"
+    , propertyToQuery onView -?> moveTo "view"
     , propertyToQuery floats -?> doFloat
     , fullFloats             -?> doFullFloat
     , ignores                -?> doIgnore ]
@@ -29,7 +30,8 @@ composeHook = composeOne $
         floatClass = anyClass [ "feh"]
         floats     = anyClass [ "Dialog", "Zenity", "Vlc" ]
         onWeb      = anyClass [ "Opera", "Minefield", "Namoroka", "Google-chrome", "Uzbl-core" ]
-        onIM       = anyClass [ "psi", "Skype"]
+        onIM       = anyClass [ "psi", "Skype", "Qutim"]
+        onView     = anyClass [ "Transmission", "Gpodder", "Transmission-gtk" ]
         ignores    = foldr1 (<||>) [ resource =? "stalonetray" ]
         fullFloats = foldr1 (<||>) [ propertyToQuery floatClass, isFullscreen, myIsFullscreen ]
 
