@@ -71,7 +71,7 @@ keybinding = \conf -> mkKeymap conf $
                 {-, ("M-S-q",        io (exitWith ExitSuccess))-}
                 , ("M-S-<Return>", spawn $ XMonad.terminal conf)
                 , ("M-t",   sendMessage $ JumpToLayout "tabs")
-                {-, ("M-w",            namedScratchpadAction scratchpads "im")-}
+                , ("M-w",            namedScratchpadAction scratchpads "ncmpcpp")
                 , ("M-x M-c",      kill)
                 , ("M-x t",        withFocused $ windows . W.sink)
                 , ("M-z",       cycleRecentWindows [xK_Super_L] xK_z xK_w)

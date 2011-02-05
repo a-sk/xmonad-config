@@ -10,7 +10,7 @@ import XMonad.Util.NamedScratchpad
 scratchpads = [ 
                 {-NS "terminal"    "urxvtc -name terminal -e tmux'" (resource =? "terminal") defaultRect-}
               NS "htop"     "urxvtc -name htop -e htop"     (title     =? "htop")     defaultRect
-              {-, NS "ncmpcpp"  "urxvtc -name ncmpcpp -e tmux" (resource =? "ncmpcpp") defaultRect-}
+              , NS "ncmpcpp"  "urxvtc -name ncmpcpp -e tmux" (resource =? "ncmpcpp") defaultRect
               , NS "gtg"  "gtg_new_task" (title =? "(no title task)") smallerRect
               ] where
                 fullRect    = customFloating $ W.RationalRect 0 0 1 1
